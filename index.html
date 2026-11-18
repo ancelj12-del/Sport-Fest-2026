@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPORT FEST 2026 | Eventos Deportivos</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b1220;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    min-height: 480px;
+    padding: 110px 8% 70px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #07152e, #0b6b78 55%, #f28c28);
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    top: 25px;
+    left: 8%;
+    right: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffc078;
+}
+
+.hero {
+    max-width: 760px;
+}
+
+.badge {
+    display: inline-block;
+    background: white;
+    color: #07152e;
+    padding: 7px 14px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 78px);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 22px 0;
+    color: #e8f6f7;
+}
+
+.btn {
+    display: inline-block;
+    background: #f28c28;
+    color: #111;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+section {
+    padding: 70px 8%;
+}
+
+.intro {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.intro h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    color: #b8c5d6;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+    align-items: start;
+}
+
+.card {
+    background: #121e32;
+    border: 1px solid #263852;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #f28c28;
+}
+
+.card-image {
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 85px;
+}
+
+.football {
+    background: linear-gradient(135deg, #122b16, #3f7d32);
+}
+
+.soccer {
+    background: linear-gradient(135deg, #092c43, #157c93);
+}
+
+.track {
+    background: linear-gradient(135deg, #421b36, #c44569);
+}
+
+.card-body {
+    padding: 23px;
+}
+
+.card h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.card-body > p {
+    color: #b8c5d6;
+    margin-bottom: 15px;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.info div {
+    background: #0b1220;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.info strong {
+    display: block;
+    color: #f28c28;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.more {
+    margin-top: 15px;
+    border-top: 1px solid #35445a;
+    padding-top: 15px;
+}
+
+.more summary {
+    display: inline-block;
+    background: #f28c28;
+    color: #111;
+    padding: 11px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+}
+
+.more summary::-webkit-details-marker {
+    display: none;
+}
+
+.more summary::after {
+    content: " +";
+}
+
+.more[open] summary::after {
+    content: " −";
+}
+
+.more-content {
+    margin-top: 18px;
+    padding: 16px;
+    background: #0b1220;
+    border-radius: 12px;
+}
+
+.more-content h4 {
+    color: #f28c28;
+    margin: 14px 0 5px;
+}
+
+.more-content p,
+.more-content li {
+    color: #c5d0df;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.more-content ul {
+    padding-left: 20px;
+}
+
+.notice {
+    margin-top: 35px;
+    padding: 20px;
+    border-radius: 14px;
+    background: #121e32;
+    border: 1px solid #263852;
+    text-align: center;
+    color: #c5d0df;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #060b15;
+    color: #91a0b5;
+}
+
+@media(max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media(max-width: 600px) {
+    nav {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-right: 12px;
+        font-size: 13px;
+    }
+
+    header {
+        min-height: 530px;
+    }
+
+    .info {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header id="inicio">
+    <nav>
+        <div class="logo">SPORT FEST 2026</div>
+        <div>
+            <a href="#inicio">Inicio</a>
+            <a href="#eventos">Eventos</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <span class="badge">AGENDA DEPORTIVA</span>
+        <h1>Vive el deporte</h1>
+        <p>
+            Tres eventos, una misma pasión. Conoce las actividades,
+            fechas, horarios y lugares de nuestra jornada deportiva.
+        </p>
+        <a class="btn" href="#eventos">CONOCER EVENTOS</a>
+    </div>
+</header>
+
+<section id="eventos">
+    <div class="intro">
+        <h2>Próximos eventos</h2>
+        <p>
+            Descubre nuestras actividades deportivas. Consulta los datos
+            principales y presiona «Más información» para conocer cada evento.
+        </p>
+    </div>
+
+    <div class="grid">
+
+        <!-- EVENTO 1 -->
+        <article class="card">
+            <div class="card-image football">🏈</div>
+
+            <div class="card-body">
+                <h3>Monterrey Football Cup</h3>
+                <p>
+                    Encuentro de fútbol americano con equipos juveniles.
+                </p>
+
+                <div class="info">
+                    <div><strong>Fecha</strong>15 dic 2026</div>
+                    <div><strong>Hora</strong>16:00 h</div>
+                    <div><strong>Lugar</strong>UANL</div>
+                    <div><strong>Categoría</strong>Juvenil</div>
+                </div>
+
+                <details class="more">
+                    <summary>Más información</summary>
+
+                    <div class="more-content">
+                        <h4>Descripción</h4>
+                        <p>
+                            Torneo juvenil de fútbol americano que busca
+                            promover la actividad física, la convivencia
+                            y el trabajo en equipo.
+                        </p>
+
+                        <h4>Objetivo</h4>
+                        <p>
+                            Fomentar el deporte y la participación de
+                            jóvenes mediante una competencia organizada.
+                        </p>
+
+                        <h4>Programa de actividades</h4>
+                        <ul>
+                            <li>16:00 h: Bienvenida y registro.</li>
+                            <li>16:30 h: Inicio de los encuentros.</li>
+                            <li>19:30 h: Final y premiación.</li>
+                        </ul>
+
+                        <h4>Reglas y requisitos</h4>
+                        <ul>
+                            <li>Presentarse antes del inicio del evento.</li>
+                            <li>Utilizar el equipo de protección correspondiente.</li>
+                            <li>Respetar a los participantes y árbitros.</li>
+                            <li>Seguir las indicaciones de los organizadores.</li>
+                        </ul>
+
+                        <h4>Inscripción y premiación</h4>
+                        <p>
+                            Los equipos deberán registrarse previamente
+                            con los organizadores. Se reconocerá al equipo
+                            campeón del torneo.
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </article>
+
+        <!-- EVENTO 2 -->
+        <article class="card">
+            <div class="card-image soccer">⚽</div>
+
+            <div class="card-body">
+                <h3>Copa Regia</h3>
+                <p>
+                    Torneo de fútbol soccer con equipos locales.
+                </p>
+
+                <div class="info">
+                    <div><strong>Fecha</strong>17 dic 2026</div>
+                    <div><strong>Hora</strong>17:00 h</div>
+                    <div><strong>Lugar</strong>Cd. Deportiva</div>
+                    <div><strong>Categoría</strong>Libre</div>
+                </div>
+
+                <details class="more">
+                    <summary>Más información</summary>
+
+                    <div class="more-content">
+                        <h4>Descripción</h4>
+                        <p>
+                            Competencia de fútbol soccer con participación
+                            de equipos locales, enfocada en el deporte,
+                            la sana convivencia y el juego limpio.
+                        </p>
+
+                        <h4>Objetivo</h4>
+                        <p>
+                            Impulsar la práctica del fútbol y fortalecer
+                            la integración entre los participantes.
+                        </p>
+
+                        <h4>Programa de actividades</h4>
+                        <ul>
+                            <li>17:00 h: Registro de equipos.</li>
+                            <li>17:30 h: Inicio de los partidos.</li>
+                            <li>20:00 h: Partido final.</li>
+                            <li>20:45 h: Premiación y cierre.</li>
+                        </ul>
+
+                        <h4>Reglas y requisitos</h4>
+                        <ul>
+                            <li>Los equipos deberán estar completos.</li>
+                            <li>Utilizar uniforme deportivo.</li>
+                            <li>Respetar las decisiones arbitrales.</li>
+                            <li>Mantener una conducta deportiva.</li>
+                        </ul>
+
+                        <h4>Inscripción y premiación</h4>
+                        <p>
+                            Los equipos interesados deberán realizar
+                            su registro con los organizadores.
+                            Se entregarán reconocimientos al primer
+                            y segundo lugar.
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </article>
+
+        <!-- EVENTO 3 -->
+        <article class="card">
+            <div class="card-image track">🏃</div>
+
+            <div class="card-body">
+                <h3>Festival de Atletismo</h3>
+                <p>
+                    Jornada de velocidad, saltos y pruebas de pista.
+                </p>
+
+                <div class="info">
+                    <div><strong>Fecha</strong>19 dic 2026</div>
+                    <div><strong>Hora</strong>09:00 h</div>
+                    <div><strong>Lugar</strong>Estadio UANL</div>
+                    <div><strong>Categoría</strong>Abierta</div>
+                </div>
+
+                <details class="more">
+                    <summary>Más información</summary>
+
+                    <div class="more-content">
+                        <h4>Descripción</h4>
+                        <p>
+                            Festival deportivo que reúne pruebas de pista
+                            y campo para fomentar la actividad física,
+                            la disciplina y el desarrollo de habilidades.
+                        </p>
+
+                        <h4>Objetivo</h4>
+                        <p>
+                            Promover el atletismo y brindar un espacio
+                            para demostrar las capacidades físicas
+                            de los participantes.
+                        </p>
+
+                        <h4>Programa de actividades</h4>
+                        <ul>
+                            <li>09:00 h: Registro y calentamiento.</li>
+                            <li>09:30 h: Carreras de velocidad.</li>
+                            <li>11:00 h: Pruebas de relevos.</li>
+                            <li>12:00 h: Salto de longitud y altura.</li>
+                            <li>13:30 h: Reconocimientos y cierre.</li>
+                        </ul>
+
+                        <h4>Reglas y requisitos</h4>
+                        <ul>
+                            <li>Presentarse con ropa deportiva.</li>
+                            <li>Realizar calentamiento antes de competir.</li>
+                            <li>Respetar los turnos y las indicaciones.</li>
+                            <li>Seguir las reglas de cada prueba.</li>
+                        </ul>
+
+                        <h4>Inscripción y premiación</h4>
+                        <p>
+                            Los participantes deberán registrarse
+                            previamente. Se otorgarán reconocimientos
+                            a los mejores resultados de cada prueba.
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </article>
+
+    </div>
+
+    <div class="notice">
+        <strong>¡Participa en SPORT FEST 2026!</strong>
+        <p>
+            Tres encuentros deportivos para compartir la pasión,
+            el esfuerzo y el espíritu de competencia.
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 SPORT FEST | Eventos deportivos</p>
+    <p>Recurso digital para la difusión de actividades deportivas.</p>
+</footer>
+
+</body>
+</html>
