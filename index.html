@@ -236,6 +236,44 @@ footer {
 }
 
 
+/* VISTAS PREVIAS DE DOCUMENTOS */
+.document-previews {
+    max-width: 1050px;
+    margin: 36px auto 0;
+    display: grid;
+    gap: 28px;
+}
+.document-preview {
+    background: #121e32;
+    border: 1px solid #263852;
+    border-radius: 16px;
+    padding: 22px;
+    overflow: hidden;
+}
+.preview-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+.preview-heading h3 { font-size: 21px; margin: 4px 0; }
+.preview-heading p { color: #b8c5d6; font-size: 14px; }
+.office-frame, .pdf-frame {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+    background: #fff;
+}
+.office-frame { height: 620px; }
+.pdf-frame { height: 720px; }
+@media(max-width: 600px) {
+    .preview-heading { align-items: flex-start; flex-direction: column; }
+    .office-frame { height: 480px; }
+    .pdf-frame { height: 560px; }
+}
+
 /* DOCUMENTOS DEL PROYECTO */
 .documents-section {
     background: #0e192b;
@@ -344,44 +382,64 @@ footer {
 <section id="documentos" class="documents-section">
     <div class="intro">
         <h2>Documentos del proyecto</h2>
-        <p>Consulta y descarga los materiales de SPORT FEST 2026 en el siguiente orden.</p>
+        <p>Los materiales se muestran aquí para que puedas consultarlos directamente. También puedes descargarlos.</p>
     </div>
 
-    <div class="documents-grid">
-        <article class="document-item">
-            <div>
-                <span class="document-number">01 · FASE 1</span>
-                <h3>Documento de Fase 1</h3>
-                <p>Consulta el trabajo correspondiente a la primera fase.</p>
+    <div class="document-previews">
+        <article class="document-preview">
+            <div class="preview-heading">
+                <div>
+                    <span class="document-number">01 · FASE 1</span>
+                    <h3>Documento de Fase 1</h3>
+                    <p>Consulta el trabajo correspondiente a la primera fase.</p>
+                </div>
+                <a class="document-link" href="documentos/fase%201.docx" download>Descargar Word</a>
             </div>
-            <a class="document-link" href="documentos/fase%201.docx" download>Descargar Word</a>
+            <iframe class="office-frame" title="Vista previa del documento de Fase 1"
+                src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fancelj12-del.github.io%2FSport-Fest-2026%2Fdocumentos%2Ffase%25201.docx"
+                loading="lazy"></iframe>
         </article>
 
-        <article class="document-item">
-            <div>
-                <span class="document-number">02 · PÓSTER</span>
-                <h3>Póster publicitario</h3>
-                <p>Cartel de difusión del evento en formato PDF.</p>
+        <article class="document-preview">
+            <div class="preview-heading">
+                <div>
+                    <span class="document-number">02 · PÓSTER</span>
+                    <h3>Póster publicitario</h3>
+                    <p>Cartel de difusión del evento en formato PDF.</p>
+                </div>
+                <a class="document-link" href="documentos/PIA_P%C3%B3ster_Equipo%23_PIA_NIA.pdf" download>Descargar PDF</a>
             </div>
-            <a class="document-link" href="documentos/PIA_P%C3%B3ster_Equipo%23_PIA_NIA.pdf" download>Ver / descargar PDF</a>
+            <iframe class="pdf-frame" title="Vista previa del póster publicitario"
+                src="documentos/PIA_P%C3%B3ster_Equipo%23_PIA_NIA.pdf#toolbar=1&navpanes=0"
+                loading="lazy"></iframe>
         </article>
 
-        <article class="document-item">
-            <div>
-                <span class="document-number">03 · BASE DE DATOS</span>
-                <h3>Base de datos del PIA</h3>
-                <p>Archivo de Excel con la información del proyecto.</p>
+        <article class="document-preview">
+            <div class="preview-heading">
+                <div>
+                    <span class="document-number">03 · BASE DE DATOS</span>
+                    <h3>Base de datos del PIA</h3>
+                    <p>Archivo de Excel con la información del proyecto.</p>
+                </div>
+                <a class="document-link" href="documentos/Base%20de%20datos%20de%20pia.xlsx" download>Descargar Excel</a>
             </div>
-            <a class="document-link" href="documentos/Base%20de%20datos%20de%20pia.xlsx" download>Descargar Excel</a>
+            <iframe class="office-frame" title="Vista previa de la base de datos"
+                src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fancelj12-del.github.io%2FSport-Fest-2026%2Fdocumentos%2FBase%2520de%2520datos%2520de%2520pia.xlsx"
+                loading="lazy"></iframe>
         </article>
 
-        <article class="document-item">
-            <div>
-                <span class="document-number">04 · CONSTANCIAS</span>
-                <h3>Constancias de participación</h3>
-                <p>Documento Word con las constancias del evento.</p>
+        <article class="document-preview">
+            <div class="preview-heading">
+                <div>
+                    <span class="document-number">04 · CONSTANCIAS</span>
+                    <h3>Constancias de participación</h3>
+                    <p>Documento Word con las constancias del evento.</p>
+                </div>
+                <a class="document-link" href="documentos/Constancias%20de%20Participaci%C3%B3n.docx" download>Descargar Word</a>
             </div>
-            <a class="document-link" href="documentos/Constancias%20de%20Participaci%C3%B3n.docx" download>Descargar Word</a>
+            <iframe class="office-frame" title="Vista previa de las constancias de participación"
+                src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fancelj12-del.github.io%2FSport-Fest-2026%2Fdocumentos%2FConstancias%2520de%2520Participaci%25C3%25B3n.docx"
+                loading="lazy"></iframe>
         </article>
     </div>
 </section>
